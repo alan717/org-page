@@ -53,6 +53,14 @@
     (when (file-directory-p pub-theme-dir)
       (delete-directory pub-theme-dir t))
     (copy-directory theme-dir pub-theme-dir t t t)))
+(defun op/copy-blog-assets (pub-assets-abs-dir)
+  "Copy asset from op/repository-org-branch op/site-asset-dir to pub dir"
+  (unless (file-directory-p pub-assets-abs-dir)
+	(make-directory pub-assets-abs-dir))
+  (let* ((asset-source-dir (concat op/repository-directory "/" op/site-asset-dir))
+		 (asset-source-abs-dir (file-name-as-directory (expand-file-name asset-source-dir))))
+	(message "dmx:copy-blog-assets: %s - %s" asset-source-abs-dir pub-assets-abs-dir)
+	(copy-directory asset-source-abs-dir pub-assets-abs-dir)))
 
 
 (provide 'op-enhance)

@@ -139,6 +139,9 @@ default value is `op/get-file-category'."
 (defcustom op/site-preview-directory "~/.op-tmp/"
   "Temporary directory path for site preview."
   :group 'org-page :type 'string)
+(defcustom op/site-asset-dir "assets"
+  "asset relative path to blog site root"
+  :group 'org-page :type 'string)
 
 (defvar op/category-config-alist
   '(("blog" ;; this is the default configuration

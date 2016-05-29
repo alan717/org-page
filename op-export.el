@@ -157,25 +157,20 @@ content of the buffer will be converted into html."
                          ))
             (setq asset-abs-path
                   (expand-file-name asset-path (file-name-directory filename)))
-            (if (not (file-exists-p asset-abs-path))
-                (message "[WARN] File %s in hyper link does not exist, org \
-file: %s." asset-path filename)
-              (unless (file-directory-p assets-dir)
-                (mkdir assets-dir t))
-              (copy-file asset-abs-path assets-dir t t t t)
-              (setq pub-abs-path (concat assets-dir
-                                         (file-name-nondirectory asset-path)))
-              (unless (string-prefix-p pub-root-dir pub-abs-path)
-                (message "[WARN] The publication root directory %s is not an \
+			(setq pub-abs-path (concat assets-dir
+									   (file-name-nondirectory asset-path)))
+			(unless (string-prefix-p pub-root-dir pub-abs-path)
+			  (message "[WARN] The publication root directory %s is not an \
 ancestor directory of assets directory %s." pub-root-dir assets-dir))
-              (setq converted-path
-                    (concat "/" (file-relative-name pub-abs-path pub-root-dir)))
-              (setq post-content
-                    (replace-regexp-in-string
-                     (regexp-quote asset-path) converted-path post-content))))))
-      (setq component-table (ht ("header" (op/render-header))
-                                ("nav" (op/render-navigation-bar))
-                                ("content" post-content)
+			(setq converted-path
+				  (concat "/" op/site-asset-dir "/" asset-path))
+			(setq post-content
+				  (replace-regexp-in-string
+				   (regexp-quote asset-path) converted-path post-content))
+			)))
+	  (setq component-table (ht ("header" (op/render-header))
+								("nav" (op/render-navigation-bar))
+								("content" post-content)
                                 ("footer" (op/render-footer))))
       (plist-put attr-plist :description (or (op/read-org-option "DESCRIPTION")
                                              post-content)))
