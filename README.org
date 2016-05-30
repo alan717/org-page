@@ -4,9 +4,7 @@
 #+DATE:      <2016-05-30 一>
 
 * After Origin
-org-page-n is short for org-page-next
-
-my next version of org-page
+dingmingxin/org-page a fork from  [[https://github.com/kelvinh/org-page][kelvinh/org-page]], adding some features.
 * Introduction
 
   Org-page is a static site generator based on [[http://orgmode.org/][org-mode]].
