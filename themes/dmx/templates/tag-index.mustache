@@ -3,7 +3,7 @@
     <h1>Tag Index</h1>
     <ul class="org-ul">
       {{#tags}}
-        <li><a href="{{tag-uri}}">{{tag-name}} ({{count}})</a></li>
+        <li><a tag-weight="{{count}}" href="{{tag-uri}}">{{tag-name}}</a></li>
       {{/tags}}
     </ul>
   </div>
