@@ -1,22 +1,32 @@
-    <div>{{! nav }}
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="/">{{site-main-title}}</a></h1>
-        <p>{{site-sub-title}}</p>
-        <ul>
-          {{#nav-categories}}
-          <li><a href="{{category-uri}}">{{category-name}}</a></li>
-          {{/nav-categories}}
-          <li><a href="/tags/">Tags</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="{{github}}">GitHub</a></li>
-          <li><a href="/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="//www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="{{site-domain}}">
-        </form>
-        {{#avatar}}
-        <img class="avatar" src="{{avatar}}" />
-        {{/avatar}}
-      </header>
-    </div>
+  <header class="navbar navbar-static-top bs-docs-nav">{{! nav}}
+  <div class="container">
+	  <nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container-fluid">
+		  <!-- Brand and toggle get grouped for better mobile display -->
+		  <div class="navbar-header">
+			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				  <!--<span class="sr-only">Toggle navigation</span>-->
+				  <!--<span class="icon-bar"></span>-->
+				  <!--<span class="icon-bar"></span>-->
+				  <!--<span class="icon-bar"></span>-->
+			  </button>
+			  <a class="navbar-brand" href="/">{{site-main-title}}</a>
+		  </div>
+
+		  <!-- Collect the nav links, forms, and other content for toggling -->
+		  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			  <ul class="nav navbar-nav navbar-right" data-smartmenus-id="smartmenus-dmx">
+				  <li class=""><a href="/">Home</a></li>
+				  {{#nav-categories}}
+				  <li class=""><a href="{{category-uri}}">{{category-name}}</a></li>
+				  {{/nav-categories}}
+				  <li class=""><a href="/tags/">Tags</a></li>
+				  <li class=""><a href="/about/">About</a></li>
+				  <li class=""><a href="{{github}}">Github</a></li>
+				  <li class=""><a href="/rss.xml">Rss</a></li>
+			  </ul>
+		  </div><!-- /.navbar-collapse -->
+	  </div>
+	  </nav>
+  </div>
+  </header>

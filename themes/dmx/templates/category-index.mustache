@@ -1,10 +1,17 @@
-<div>
-  <div class="post">
-    <h1>{{cat-name}} Index</h1>
-    <ul class="org-ul">
-      {{#posts}}
-        <li>{{date}}&nbsp;&nbsp;»&nbsp;&nbsp;<a href="{{post-uri}}">{{post-title}}</a></li>
-      {{/posts}}
-    </ul>
-  </div>
+<div class="container center-block">
+	<div class="col-md-2"></div>
+	<div class="col-md-8 col-sm-12">
+		<div class="panel panel-default">
+			<div class="panel panel-heading">
+				<h1>{{cat-name}} Index</h1>
+			</div>
+			<ul class="list-group">
+				{{#posts}}
+					<li class="list-group-item">{{date}}&nbsp;&nbsp;»&nbsp;&nbsp;<a href="{{post-uri}}">{{post-title}}</a></li>
+				{{/posts}}
+			</ul>
+		</div>
+	</div>
+	<div class="col-md-2"></div>
 </div>
+
