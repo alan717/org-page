@@ -28,4 +28,16 @@ $(document).ready(function() {
 	$("img").each(function(i) {
 		$(this).addClass("img-responsive");
 	});
+
+	//for bootstrap-toc
+	$('body').attr("data-spy", "scroll");
+	$('body').attr("data-target", "#toc");
+
+	$("#maybe-toc").append("<nav id=\"toc\" data-spy=\"affix\" data-toggle=\"toc\"></nav>");
+	var ulElements = $("#text-table-of-contents ul:first");
+	$("nav#toc").append(ulElements);
+	$("#table-of-contents").remove();
+	$('#maybe-toc ul').each(function() {
+		$(this).addClass("nav");
+	});
 });

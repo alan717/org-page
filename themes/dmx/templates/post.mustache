@@ -1,8 +1,12 @@
 <div>{{! content, do NOT indent}}
-<div class="post">
-{{#title}}
-<h1>{{title}}</h1>
-{{/title}}
-{{{content}}}
+<div class="container center-block">
+	<div class="col-md-1"></div>
+	<div class="col-md-10 col-sm-12">
+		{{#title}}
+			<h1>{{title}}</h1>
+		{{/title}}
+		{{{content}}}
+	</div>
+	<div class="col-md-1" id="maybe-toc"></div>
 </div>
 </div>
