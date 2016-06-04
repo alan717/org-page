@@ -9,7 +9,7 @@ window.onload = function() {
 		TagCanvas.weightSize = 1.5;
 		TagCanvas.weightSizeMax = '6';
 		TagCanvas.weightSizeMin = '2';
-		TagCanvas.initial= [0.380, 0.570];
+		TagCanvas.initial= [0.180, 0.270];
 		//TagCanvas.dragControl = true;
 
 		var options = {
