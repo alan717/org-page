@@ -1,6 +1,6 @@
-window.addEventListener("hashchange", function() { scrollBy(0, -70) });
+//window.addEventListener("hashchange", function() { scrollBy(0, -70) });
 $(document).ready(function() {
-
+	var test = "hehe";
 	var baseUrl = document.location.origin;
 	var currentUrl = window.location.href;
 	var currentShortUrl = currentUrl.replace(baseUrl,"");
