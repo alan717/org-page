@@ -10,4 +10,12 @@ body {
 
 .article {
 	outline: 1px solid rgba(211, 211, 211, .6);
+	padding-left: 50px;
+	padding-right: 50px;
+	margin-bottom: 30px;
+}
+
+/* navbar */
+.navbar-default {
+	opacity: .9;
 }
