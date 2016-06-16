@@ -1,4 +1,13 @@
+body {
+	font-family: STFangSong, Helvetica, Arial, Vernada, Tahoma, STXihei, "Microsoft YaHei", "Songti SC", SimSun, Heiti, sans-serif;
+	font-size: 18px;
+}
+
 .outline-2 h2,h3,h4,h5,h6 {
 	padding-top:50px;
 	margin-top:-20px;
+}
+
+.article {
+	outline: 1px solid rgba(211, 211, 211, .6);
 }

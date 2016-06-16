@@ -4,6 +4,11 @@ $(document).ready(function() {
 	var baseUrl = document.location.origin;
 	var currentUrl = window.location.href;
 	var currentShortUrl = currentUrl.replace(baseUrl,"");
+
+	if(currentShortUrl == "/" || currentShortUrl == "/about/") {
+		$("div.col-md-10").removeClass("article");
+	}
+
 	$("li.dmx-menu-item a").each(function(i){
 		var url = this.href;
 		var shortUrl = url.replace(baseUrl,"");
