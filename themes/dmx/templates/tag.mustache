@@ -1,11 +1,19 @@
-<div>
-  <div class="post">
-    <h1>Tag: {{tag-name}}</h1>
-    <ul class="org-ul">
-      {{#posts}}
-        <li><a href="{{post-uri}}">{{post-title}}</a></li>
-      {{/posts}}
-    </ul>
-  </div>
+<div class = "container center-block">
+	<div class="col-md-2"></div>
+	<div class="col-md-8 col-sm-12">
+		<div class="post">
+			<div class="panel panel-info">
+				<div class="panel panel-heading">
+					<h1 class="panel-title">Tag: {{tag-name}}</h1>
+				</div>
+				<ul class="list-group">
+					{{#posts}}
+						<li class="list-group-item"><a href="{{post-uri}}">{{post-title}}</a></li>
+					{{/posts}}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-2"></div>
 </div>
 
