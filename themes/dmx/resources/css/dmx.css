@@ -1,6 +1,7 @@
 body {
 	font-family: STFangSong, Helvetica, Arial, Vernada, Tahoma, STXihei, "Microsoft YaHei", "Songti SC", SimSun, Heiti, sans-serif;
 	font-size: 18px;
+	background: url(/assets/body-bg.png) 0 0 repeat;
 }
 
 .outline-2 h2,h3,h4,h5,h6 {
@@ -14,6 +15,30 @@ body {
 	padding-right: 50px;
 	padding-bottom: 30px;
 	margin-bottom: 30px;
+	background:-webkit-linear-gradient(
+	to bottom, 
+	rgba(188,255,254,0.8) 0%,
+	rgba(200,255,254,0.5) 5%,
+	rgba(220,255,254,0.3) 10%,
+	rgba(255,255,255,0.8) 20%, 
+	rgba(255,255,255,1) 50%, 
+	rgba(255,255,255,0.8) 80%, 
+	rgba(220,255,254,0.3) 90%,
+	rgba(200,255,254,0.5) 95%,
+	rgba(188,255,254,0.8) 100%
+	);
+	background:linear-gradient(
+	to bottom, 
+	rgba(188,255,254,0.8) 0%,
+	rgba(200,255,254,0.5) 5%,
+	rgba(220,255,254,0.3) 10%,
+	rgba(255,255,255,0.8) 20%, 
+	rgba(255,255,255,1) 50%, 
+	rgba(255,255,255,0.8) 80%, 
+	rgba(220,255,254,0.3) 90%,
+	rgba(200,255,254,0.5) 95%,
+	rgba(188,255,254,0.8) 100%
+	);
 }
 
 /* navbar */
