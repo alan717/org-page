@@ -18,7 +18,7 @@ $(document).ready(function() {
 			var innerHtml = this.innerHTML;
 			$(this).replaceWith($(replaceContent));
 			var asciinemaPlayOptions = {
-				speed: 1.3,
+				speed: 1,
 				theme: "solarized-light",
 				author: "dmx",
 				title: innerHtml,
