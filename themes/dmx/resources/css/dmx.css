@@ -1,7 +1,7 @@
 body {
 	font-family: STFangSong, Helvetica, Arial, Vernada, Tahoma, STXihei, "Microsoft YaHei", "Songti SC", SimSun, Heiti, sans-serif;
 	font-size: 18px;
-	background: url(/assets/body-bg.png) 0 0 repeat;
+	background: #e7e7e7;
 }
 
 .outline-2 h2,h3,h4,h5,h6 {
