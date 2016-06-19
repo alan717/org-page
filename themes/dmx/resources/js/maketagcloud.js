@@ -57,7 +57,6 @@ $(document).ready(function() {
 		var element = $(this);
 		imageExists(tagPng, function(exists) {
 			if(exists) {
-				element.empty();
 				element.append("<img src=\""+tagPng+"\">");
 			}
 			if(i+1 == tagLength) {
