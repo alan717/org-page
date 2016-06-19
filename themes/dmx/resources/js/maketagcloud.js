@@ -45,7 +45,6 @@ $(document).ready(function() {
 
 			TagCanvas.Start('myCanvas','tags',options);
 		} catch(e) {
-			// something went wrong, hide the canvas container
 			document.getElementById('myCanvasContainer').style.display = 'none';
 		}
 	}
@@ -58,6 +57,7 @@ $(document).ready(function() {
 		var element = $(this);
 		imageExists(tagPng, function(exists) {
 			if(exists) {
+				element.empty();
 				element.append("<img src=\""+tagPng+"\">");
 			}
 			if(i+1 == tagLength) {
