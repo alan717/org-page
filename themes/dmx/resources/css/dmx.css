@@ -9,6 +9,12 @@ body {
 	margin-top:-20px;
 }
 
+#myCanvas {
+	padding: 0;
+	margin: 0 auto;
+	display: block;
+}
+
 .article {
 	outline: 1px solid rgba(211, 211, 211, .6);
 	padding-left: 50px;

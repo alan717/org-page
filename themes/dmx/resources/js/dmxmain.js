@@ -17,7 +17,7 @@ $(document).ready(function() {
 			if(shortUrl.length == 1) {
 				active = true;
 			}
-		} 
+		}
 		else {
 			if(shortUrl.length>1 && currentShortUrl.indexOf(shortUrl) == 0) {
 				active = true;

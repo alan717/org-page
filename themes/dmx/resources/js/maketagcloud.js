@@ -11,6 +11,7 @@ window.onload = function() {
 		TagCanvas.weightSizeMin = '2';
 		TagCanvas.initial= [0.180, 0.270];
 		TagCanvas.dragControl = true;
+		TagCanvas.wheelZoom = false;
 
 		var options = {
 			textColour: null,
