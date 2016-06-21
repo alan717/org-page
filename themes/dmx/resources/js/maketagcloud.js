@@ -26,7 +26,7 @@ $(document).ready(function() {
 	}
 
 	function getRandomSpeed() {
-		return getRandomIntInclusive(-100, 100)*1.0/100
+		return getRandomIntInclusive(-40, 40)*1.0/100
 	}
 
 	function getTagCanvasOptions() {
@@ -38,7 +38,6 @@ $(document).ready(function() {
 		};
 
 		var common_options = {
-			stretchX: 1.6,
 			fadeIn: 800,
 			minBrightness: 0.4,
 			depth: 0.99,
@@ -69,7 +68,6 @@ $(document).ready(function() {
 			options.lock = 'x';
 			options.initial = [0.0, getRandomSpeed()];
 			options.weightMode = 'colour';
-			options.stretchX = 1;
 			options.dragControl = true;
 		}
 		else if (index == 2) {
@@ -88,7 +86,7 @@ $(document).ready(function() {
 		}
 		else if (index == 4) {
 			options = common_options;
-			options.stretchX= 1.6;
+			options.stretchX= 1;
 			options.initial= [getRandomSpeed(), 0];
 			options.shape = "DblHelix";
 			options.dragControl =false;
