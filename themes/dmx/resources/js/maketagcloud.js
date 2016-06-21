@@ -1,5 +1,18 @@
 $('#myCanvas').show();
 $('#myCanvas').css('border-radius', '20px');
+function DblHelix(n, rx, ry, rz) {
+	var a = Math.PI / n, i, j, p = [],
+		z = rz * 2 / n;
+	for(i = 0; i < n; ++i) {
+		j = a * i;
+		if(i % 2)
+			j += Math.PI;
+		p.push([rx * Math.cos(j),
+				rz - z * i,
+				ry * Math.sin(j)]);
+	}
+	return p;
+}
 $(document).ready(function() {
 
 	function imageExists(url, callback) {
@@ -10,6 +23,10 @@ $(document).ready(function() {
 	}
 	function getRandomIntInclusive(min, max) {
 		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+	function getRandomSpeed() {
+		return getRandomIntInclusive(-100, 100)*1.0/100
 	}
 
 	function getTagCanvasOptions() {
@@ -45,12 +62,12 @@ $(document).ready(function() {
 			outlineColour: 'tag'
 		};
 		var options;
-		var index = getRandomIntInclusive(1,3);
+		var index = getRandomIntInclusive(1,5);
 		if(index == 1) {
 			options = common_options;
 			options.shape = 'hcylinder(0.6)';
 			options.lock = 'x';
-			options.initial = [0.0, Math.random()];
+			options.initial = [0.0, getRandomSpeed()];
 			options.weightMode = 'colour';
 			options.stretchX = 1;
 			options.dragControl = true;
@@ -58,16 +75,34 @@ $(document).ready(function() {
 		else if (index == 2) {
 			options = common_options;
 			options.stretchX= 1.6;
-			options.initial= [Math.random(), Math.random()];
+			options.initial= [getRandomSpeed(), getRandomSpeed()];
 			options.dragControl = true;
 		}
 		else if (index == 3) {
 			options = common_options;
 			options.stretchX= 1.6;
-			options.initial= [0, Math.random()];
+			options.initial= [0, getRandomSpeed()];
 			options.dragControl = true;
 			options.shape = 'hring';
 			options.lock = 'x';
+		}
+		else if (index == 4) {
+			options = common_options;
+			options.stretchX= 1.6;
+			options.initial= [getRandomSpeed(), 0];
+			options.shape = "DblHelix";
+			options.dragControl =false;
+			options.weightMode = "both";
+			options.imageMode = "text";
+			options.lock = "y";
+		}
+		else if (index == 5) {
+			options = common_options;
+			options.initial= [getRandomSpeed(), 0];
+			options.shape = "vcylinder";
+			options.dragControl =false;
+			options.weightMode = "both";
+			options.lock = "y";
 		}
 		return options;
 	}
