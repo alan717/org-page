@@ -89,7 +89,7 @@ $(document).ready(function() {
 			options.stretchX= 1;
 			options.initial= [getRandomSpeed(), 0];
 			options.shape = "DblHelix";
-			options.dragControl =false;
+			options.dragControl =true;
 			options.weightMode = "both";
 			options.imageMode = "text";
 			options.lock = "y";
@@ -98,7 +98,7 @@ $(document).ready(function() {
 			options = common_options;
 			options.initial= [getRandomSpeed(), 0];
 			options.shape = "vcylinder";
-			options.dragControl =false;
+			options.dragControl =true;
 			options.weightMode = "both";
 			options.lock = "y";
 		}
