@@ -51,6 +51,9 @@ body {
 	rgba(200,255,254,0.5) 95%,
 	rgba(188,255,254,0.8) 100%
 	);
+    box-shadow: 2px 2px 8px #aaa;
+    -webkit-box-shadow: 2px 2px 8px #aaa;
+    -moz-box-shadow: 2px 2px 8px #aaa;
 }
 
 /* navbar */
