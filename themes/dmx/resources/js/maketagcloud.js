@@ -50,7 +50,7 @@ $(document).ready(function() {
 			weightSizeMax : 36,
 			weightSizeMin : 14,
 			wheelZoom : false,
-			imageRadius : '50%', //图片圆角
+			//imageRadius : '50%', //图片圆角
 			shuffleTags: true,
 			depth: 0.8,
 			maxSpeed: 0.05,
