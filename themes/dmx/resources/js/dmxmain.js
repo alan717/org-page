@@ -5,8 +5,8 @@ $(document).ready(function() {
 	var currentUrl = window.location.href;
 	var currentShortUrl = currentUrl.replace(baseUrl,"");
 
-	if(currentShortUrl == "/" || currentShortUrl == "/about/") {
-		$("div.col-md-10").removeClass("article");
+	if(currentShortUrl != "/" && currentShortUrl != "/about/") {
+		$("div.col-md-10").addClass("article");
 	}
 
 	$("li.dmx-menu-item a").each(function(i){
