@@ -86,7 +86,11 @@ a hash table accordint to current buffer."
            ("author" (or (op/read-org-option "AUTHOR")
                          user-full-name "Unknown Author"))
            ("description" (op/read-org-option "DESCRIPTION"))
-           ("keywords" (op/read-org-option "KEYWORDS"))))))
+           ("keywords" (op/read-org-option "KEYWORDS"))
+           ("baidu-analytics" (and (boundp 'op/personal-baidu-analytics-id)
+                                   op/personal-baidu-analytics-id))
+           ("baidu-analytics-id" op/personal-baidu-analytics-id)
+           ))))
 
 (defun op/render-navigation-bar (&optional param-table)
   "Render the navigation bar on each page. it will be read firstly from
@@ -234,7 +238,10 @@ customization to relevant variables."
        ("duoshuo-shortname" op/personal-duoshuo-shortname)
        ("duoshuo-comment" (if op/personal-duoshuo-shortname t nil))
        ("google-analytics-id" op/personal-google-analytics-id)
-       ("google-analytics" (if op/personal-google-analytics-id t nil))))
+       ("google-analytics" (if op/personal-google-analytics-id t nil))
+       ("baidu-analytics" (if op/personal-baidu-analytics-id t nil))
+       ("baidu-analytics-id" op/personal-baidu-analytics-id)
+       ))
   op/default-template-parameters)
 
 ;;; this function is deprecated

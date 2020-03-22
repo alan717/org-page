@@ -159,17 +159,18 @@ perfectly manipulated by org-page."
 `op/personal-github-link': [optional] (but customization recommended)
 `op/personal-google-analytics-id': [optional] (but customization recommended)
 `op/theme': [optional]
-`op/highlight-render': [optional](default 'js)"
+`op/highlight-render': [optional](default 'js)
+`op/personal-baidu-analytics-id': [optional] (百度统计建议用)"
   (unless (and op/repository-directory
                (file-directory-p op/repository-directory))
-    (error "Directory `%s' is not properly configured."
+    (error "Directory `%s' is not properly configured"
            (symbol-name 'op/repository-directory)))
   (unless (file-directory-p (op/get-theme-dir))
     (error "Org-page cannot detect theme directory `%s' automatically, please \
-help configure it manually, usually it should be <org-page directory>/themes/."
+help configure it manually, usually it should be <org-page directory>/themes/"
            (symbol-name 'op/theme)))
   (unless op/site-domain
-    (error "Site domain `%s' is not properly configured."
+    (error "Site domain `%s' is not properly configured"
            (symbol-name 'op/site-domain)))
 
   (setq op/repository-directory (expand-file-name op/repository-directory))

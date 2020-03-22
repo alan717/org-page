@@ -10,4 +10,15 @@
     {{/keywords}}
     <link rel="stylesheet" href="/media/css/main.css" type="text/css">
     <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+    {{#baidu-analytics}}
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+                    var hm = document.createElement("script");
+                    hm.src = "https://hm.baidu.com/hm.js?{{baidu-analytics-id}}";
+                    var s = document.getElementsByTagName("script")[0]; 
+                    s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    {{/baidu-analytics}}
   </head>

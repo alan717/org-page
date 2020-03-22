@@ -110,6 +110,10 @@ points to the directory `themes' in org-page installation directory."
   "Personal google analytics id."
   :group 'org-page :type 'string)
 
+(defcustom op/personal-baidu-analytics-id nil
+  "百度统计的站点id."
+  :group 'org-page :type 'string)
+
 (defcustom op/template-directory nil
   "The directory stores templates for page rendering. By default, org-page uses
 `op/theme' and `op/theme-root-directory' to determine the template directory.
@@ -192,6 +196,8 @@ default value is `op/get-file-category'."
       ("duoshuo-comment" (if op/personal-duoshuo-shortname t nil))
       ("google-analytics-id" op/personal-google-analytics-id)
       ("google-analytics" (if op/personal-google-analytics-id t nil))
+      ("baidu-analytics-id" op/personal-baidu-analytics-id)
+      ("baidu-analytics" (if op/personal-baidu-analytics-id t nil))
       ("creator-info" org-html-creator-string))
   "Default template rendering parameters.")
 

@@ -328,7 +328,11 @@ file attribute property lists. PUB-BASE-DIR is the root publication directory."
                    (ht ("page-title" (concat (op/get-category-name (car cat-list))
                                              " Index - "
                                              op/site-main-title))
-                       ("author" (or user-full-name "Unknown Author")))))
+                       ("author" (or user-full-name "Unknown Author"))
+                       ("baidu-analytics" (and
+                                           (boundp 'op/personal-baidu-analytics-id)
+                                           op/personal-baidu-analytics-id))
+                       ("baidu-analytics-id" op/personal-baidu-analytics-id))))
                  ("nav" (op/render-navigation-bar))
                  ("content"
                   (op/render-content
@@ -382,7 +386,12 @@ publication directory."
       (ht ("header"
            (op/render-header
             (ht ("page-title" (concat "Index - " op/site-main-title))
-                ("author" (or user-full-name "Unknown Author")))))
+                ("author" (or user-full-name "Unknown Author"))
+                ("baidu-analytics" (and
+                                    (boundp 'op/personal-baidu-analytics-id)
+                                    op/personal-baidu-analytics-id))
+                ("baidu-analytics-id" op/personal-baidu-analytics-id)
+                )))
           ("nav" (op/render-navigation-bar))
           ("content"
            (op/render-content
@@ -438,7 +447,12 @@ is the root publication directory."
       (ht ("header"
            (op/render-header
             (ht ("page-title" (concat "About - " op/site-main-title))
-                ("author" (or user-full-name "Unknown Author")))))
+                ("author" (or user-full-name "Unknown Author"))
+                ("baidu-analytics" (and
+                                    (boundp 'op/personal-baidu-analytics-id)
+                                    op/personal-baidu-analytics-id))
+                ("baidu-analytics-id" op/personal-baidu-analytics-id)
+                )))
           ("nav" (op/render-navigation-bar))
           ("content"
            (op/render-content
@@ -489,7 +503,12 @@ TODO: improve this function."
       (ht ("header"
            (op/render-header
             (ht ("page-title" (concat "Tag Index - " op/site-main-title))
-                ("author" (or user-full-name "Unknown Author")))))
+                ("author" (or user-full-name "Unknown Author"))
+                ("baidu-analytics" (and
+                                    (boundp 'op/personal-baidu-analytics-id)
+                                    op/personal-baidu-analytics-id))
+                ("baidu-analytics-id" op/personal-baidu-analytics-id)
+                )))
           ("nav" (op/render-navigation-bar))
           ("content"
            (op/render-content
@@ -555,7 +574,12 @@ TODO: improve this function."
                 (op/render-header
                  (ht ("page-title" (concat "Tag: " (car tag-list)
                                            " - " op/site-main-title))
-                     ("author" (or user-full-name "Unknown Author")))))
+                     ("author" (or user-full-name "Unknown Author"))
+                     ("baidu-analytics" (and
+                                         (boundp 'op/personal-baidu-analytics-id)
+                                         op/personal-baidu-analytics-id))
+                     ("baidu-analytics-id" op/personal-baidu-analytics-id)
+                     )))
                ("nav" (op/render-navigation-bar))
                ("content"
                 (op/render-content
@@ -614,7 +638,12 @@ TODO: improve this function."
       (ht ("header"
            (op/render-header
             (ht ("page-title" (concat "Author Index - " op/site-main-title))
-                ("author" (or user-full-name "Unknown Author")))))
+                ("author" (or user-full-name "Unknown Author"))
+                ("baidu-analytics" (and
+                                    (boundp 'op/personal-baidu-analytics-id)
+                                    op/personal-baidu-analytics-id))
+                ("baidu-analytics-id" op/personal-baidu-analytics-id)
+                )))
           ("nav" (op/render-navigation-bar))
           ("content"
            (op/render-content
@@ -657,7 +686,12 @@ TODO: improve this function."
                 (op/render-header
                  (ht ("page-title" (concat "Author: " (car author-list)
                                            " - " op/site-main-title))
-                     ("author" (or user-full-name "Unknown Author")))))
+                     ("author" (or user-full-name "Unknown Author"))
+                     ("baidu-analytics" (and
+                                         (boundp 'op/personal-baidu-analytics-id)
+                                         op/personal-baidu-analytics-id))
+                     ("baidu-analytics-id" op/personal-baidu-analytics-id)
+                     )))
                ("nav" (op/render-navigation-bar))
                ("content"
                 (op/render-content
