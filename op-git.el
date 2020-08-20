@@ -33,9 +33,7 @@
 (require 'dash)
 
 (defun op/git-all-files (repo-dir &optional branch)
-  "This function will return a list contains all org files in git repository
-presented by REPO-DIR, if optional BRANCH is offered, will check that branch
-instead of pointer HEAD."
+  "This function will return a list contain all org files in git repository presented by REPO-DIR, if optional BRANCH is offered, will check that branch instead of pointer HEAD."
   (let* ((org-file-ext ".org")
          (git-repo repo-dir)
          (output (git-run "ls-tree" "-r" "--name-only"
@@ -50,29 +48,26 @@ instead of pointer HEAD."
     (git-on-branch)))
 
 (defun op/git-new-branch (repo-dir branch-name)
-  "This function will create a new branch with BRANCH-NAME, and checkout it."
+  "This function will create a new branch with BRANCH-NAME in REPO-DIR, and checkout it."
   (let ((git-repo repo-dir))
     (unless (git-branch? branch-name)
       (git-branch branch-name))
     (git-checkout branch-name)))
 
 (defun op/git-change-branch (repo-dir branch-name)
-  "This function will change branch to BRANCH-NAME of git repository presented
-by REPO-DIR. Do nothing if it is current branch."
+  "This function will change branch to BRANCH-NAME of git repository presented by REPO-DIR.  Do nothing if it is current branch."
   (let ((git-repo repo-dir))
     (unless (git-on-branch? branch-name)
       (git-checkout branch-name))))
 
 (defun op/git-init-repo (repo-dir)
-  "This function will initialize a new empty git repository. REPO-DIR is the
-directory where repository will be initialized."
+  "This function will initialize a new empty git repository.  REPO-DIR is the directory where repository will be initialized."
   (unless (file-directory-p repo-dir)
     (mkdir repo-dir t))
   (git-init repo-dir))
 
 (defun op/git-commit-changes (repo-dir message)
-  "This function will commit uncommitted changes to git repository presented by
-REPO-DIR, MESSAGE is the commit message."
+  "This function will commit uncommitted change to git repository presented by REPO-DIR, MESSAGE is the commit message."
   (let ((git-repo repo-dir))
     (git-add)
     (git-commit message)))

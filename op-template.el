@@ -58,23 +58,19 @@ nil, initialize it."
   value)
 
 (defmacro op/get-cache-create (key &rest body)
-  "Firstly get item from `op/item-cache' with KEY, if item not found, evaluate
-BODY and push the result into cache and return it."
+  "Firstly get item from `op/item-cache' with KEY, if item not found, evaluate BODY and push the result into cache and return it."
   `(or (op/get-cache-item ,key)
        (op/update-cache-item ,key (funcall (lambda () ,@body)))))
 
 (defun op/get-category-name (category)
-  "Return the name of the CATEGORY based on op/category-config-alist :label property. 
-Default to capitalized CATEGORY name if no :label property found."
+  "Return the name of the CATEGORY based on op/category-config-alist :label property.  Default to capitalized CATEGORY name if no :label property found."
   (let* ((config (cdr (or (assoc category op/category-config-alist)
                           (assoc "blog" op/category-config-alist)))))
     (or (plist-get config :label)
         (capitalize category))))
 
 (defun op/render-header (&optional param-table)
-  "Render the header on each page. PARAM-TABLE is the hash table from mustache
-to render the template. If it is not set or nil, this function will try to build
-a hash table accordint to current buffer."
+  "Render the header on each page.  PARAM-TABLE is the hash table from mustache to render the template.  If it is not set or nil, this function will try to build a hash table accordint to current buffer."
   (mustache-render
    (op/get-cache-create
     :header-template
@@ -93,11 +89,7 @@ a hash table accordint to current buffer."
            ))))
 
 (defun op/render-navigation-bar (&optional param-table)
-  "Render the navigation bar on each page. it will be read firstly from
-`op/item-cache', if there is no cached content, it will be rendered
-and pushed into cache from template. PARAM-TABLE is the hash table for mustache
-to render the template. If it is not set or nil, this function will try to
-render from a default hash table."
+  "Render the navigation bar on each page.  it will be read firstly from `op/item-cache', if there is no cached content,  it will be rendered and pushed into cache from template.  PARAM-TABLE is the hash table for mustache to render the template.  If it is not set or nil,  this function will try to render from a default hash table."
   (op/get-cache-create
    :nav-bar-html
    (message "Render navigation bar from template")
@@ -131,9 +123,7 @@ render from a default hash table."
                   (if op/organization (ht ("authors-li" t)) (ht ("avatar" op/personal-avatar))))))))
 
 (defun op/render-content (&optional template param-table)
-  "Render the content on each page. TEMPLATE is the template name for rendering,
-if it is not set of nil, will use default post.mustache instead. PARAM-TABLE is
-similar to `op/render-header'. `op/highlight-render' is `js' or `htmlize'."
+  "Render the content on each page.  TEMPLATE is the template name for rendering,  if it is not set of nil, will use default post.mustache instead.  PARAM-TABLE is similar to `op/render-header'.   `op/highlight-render' is `js' or `htmlize'."
   (mustache-render
    (op/get-cache-create
     (if template
@@ -156,8 +146,7 @@ similar to `op/render-header'. `op/highlight-render' is `js' or `htmlize'."
                    (org-export-as'html nil nil t nil))))))))
 
 (defun op/render-footer (&optional param-table)
-  "Render the footer on each page. PARAM-TABLE is similar to
-`op/render-header'."
+  "Render the footer on each page.  PARAM-TABLE is similar to `op/render-header'."
   (mustache-render
    (op/get-cache-create
     :footer-template

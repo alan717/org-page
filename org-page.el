@@ -57,7 +57,7 @@
 (defun op/do-publication (&optional force-all
                                     base-git-commit pub-base-dir
                                     auto-commit auto-push)
-  "The main entrance of org-page. The entire procedure is:
+  "The main entrance of org-page.  The entire procedure is:
 1) verify configuration
 2) read changed files on branch `op/repository-org-branch' of repository
 `op/repository-directory', the definition of 'changed files' is:
@@ -78,7 +78,7 @@ then the branch `op/repository-html-branch' will be pushed to remote repo."
    (let* ((f (y-or-n-p "Publish all org files? "))
           (b (unless f (read-string "Base git commit: " "HEAD~1")))
           (p (when (y-or-n-p
-                    "Publish to a directory? (to original repo if not) ")
+                    "Publish to a directory(to original repo if not)? ")
                (read-directory-name "Publication directory: ")))
           (a (when (not p)
                (y-or-n-p "Auto commit to repo? ")))
@@ -94,7 +94,7 @@ then the branch `op/repository-html-branch' will be pushed to remote repo."
          changed-files all-files remote-repos)
     (op/git-change-branch op/repository-directory op/repository-org-branch)
     (op/prepare-theme store-dir)
-	(op/copy-blog-assets store-dir-abs)
+    (op/copy-blog-assets store-dir-abs)
     (setq all-files (op/git-all-files op/repository-directory))
     (setq changed-files (if force-all
                             `(:update ,all-files :delete nil)
@@ -131,8 +131,7 @@ files, committed by org-page.")
       (message "Publication finished, output directory: %s." pub-base-dir))))
 
 (defun op/new-repository (repo-dir)
-  "Generate a new git repository in directory REPO-DIR, which can be
-perfectly manipulated by org-page."
+  "Generate a new git repository in directory REPO-DIR, which can be perfectly manipulated by org-page."
   (interactive
    (list (read-directory-name
           "Specify a directory to become the repository: " nil nil nil)))
@@ -183,8 +182,7 @@ help configure it manually, usually it should be <org-page directory>/themes/"
     (setq op/highlight-render 'js)))
 
 (defun op/generate-readme (save-dir)
-  "Generate README for `op/new-repository'. SAVE-DIR is the directory where to
-save generated README."
+  "Generate README for `op/new-repository'.  SAVE-DIR is the directory where to save generated README."
   (string-to-file
    (concat
     (format "Personal site of %s, managed by emacs, org mode, git and org-page."
